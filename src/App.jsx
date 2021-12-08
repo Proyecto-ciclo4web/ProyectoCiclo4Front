@@ -32,10 +32,10 @@ import NvoProyecto from 'pages/proyecto/NvoProyecto';
 
  
 
-{/* 'http://localhost:4855/graphql' */}
+{/* 'https://misiontic-4.herokuapp.com/graphql' */}
 
 const httpLink = createHttpLink({
-  uri: 'https://misiontic-4.herokuapp.com/graphql'
+  uri: 'http://localhost:4855/graphql'
 })
 
 // una funcion la cual envia el token en el header cuando hacemos una peticion
