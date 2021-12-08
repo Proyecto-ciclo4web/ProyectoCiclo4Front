@@ -39,5 +39,10 @@ const Enum_FasesProyecto = {
 
 }
 
+const Enum_TipoObjetivo={
+    GENERAL: 'General',
+    ESPECIFICO: 'Especifico'
+}
 
-export { Enum_Rol, Enum_EstadoUsuario ,Enum_EstadoProyecto,Enum_FasesProyecto}
+
+export { Enum_Rol, Enum_EstadoUsuario ,Enum_EstadoProyecto,Enum_FasesProyecto,Enum_TipoObjetivo}

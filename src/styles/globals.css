@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background-image: url('./annie-spratt.jpg');
+  background-size: cover;
+}
+
 .sidebar {
   @apply w-64 bg-gray-200 shadow flex-col justify-between;
 }

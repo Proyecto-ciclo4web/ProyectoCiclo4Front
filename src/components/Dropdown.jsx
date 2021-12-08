@@ -16,7 +16,7 @@ const DropDown = ({  name, defaultValue = '', required, options }) => {
         className='input'
         value={selectedValue}
         onChange={(e) => setSelectedValue(e.target.value)}
-        className="w-80 campo mb-10"
+        className="w-80 campo mb-5"
       >
         {optionsSelect.map((o) => {
           return (

@@ -27,14 +27,15 @@ import VerInscripciones from 'pages/proyecto/verInscripciones';
 import VerAvances from 'pages/proyecto/verAvances';
 import EditarEstadoProyecto from 'pages/proyecto/editarEstadoProyecto';
 import EditarFaseProyecto from 'pages/proyecto/editarFaseProyecto';
+import NvoProyecto from 'pages/proyecto/NvoProyecto';
 
 
 
 
-
+{/* 'https://misiontic-4.herokuapp.com/graphql'*/}
 
 const httpLink = createHttpLink({
-  uri:'http://localhost:4855/graphql'
+  uri: 'http://localhost:4855/graphql'
 })
 
 // una funcion la cual envia el token en el header cuando hacemos una peticion
@@ -109,10 +110,10 @@ function App() {
                 <Route path='/verusuarios' element={<VerUsuarios />} />
 
                 <Route path='/editarEstado/:_id' element={<EditarEstado />} />
-
-                
+            
                 <Route path='/verProyectos' element={<VerProyectos />} />
 
+                <Route path='/nvoProyecto' element={<NvoProyecto />} />
 
                 <Route path='/verInscripciones/:_id' element={<VerInscripciones />} />
 

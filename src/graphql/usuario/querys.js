@@ -2,8 +2,8 @@ const { default: gql } = require("graphql-tag");
 
 const getUsuarios = gql`
 
-query Query {
-    Usuarios {
+query Query($filtro: FiltroUsuarios) {
+  Usuarios(filtro: $filtro) {
       _id
       nombre
       apellido
@@ -11,8 +11,8 @@ query Query {
       correo
       rol
       estado
-    }
   }
+}
 `;
 
 

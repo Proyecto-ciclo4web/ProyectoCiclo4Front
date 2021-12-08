@@ -24,6 +24,15 @@ mutation Mutation($cambiarFaseProyectoId: String!, $fase: Enum_FaseProyecto!) {
 
 `;
 
+const crearProyecto = gql`
+mutation CrearProyecto($nombre: String!, $presupuesto: String!, $fechaInicio: String, $fechaFin: String, $estado: Enum_EstadoProyecto, $fase: Enum_FaseProyecto, $lider: String!, $objetivos: [crearObjetivo]){
+  crearProyecto(nombre: $nombre, presupuesto: $presupuesto, fechaInicio: $fechaInicio, fechaFin: $fechaFin, estado: $estado, fase: $fase, lider: $lider, objetivos: $objetivos) {
+   nombre
+  }
+}
+`;
+
+
 
 
 
