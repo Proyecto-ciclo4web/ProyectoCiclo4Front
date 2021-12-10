@@ -54,7 +54,7 @@ const MiPerfil = () => {
         <div>
 
 
-            <div className="contenedor ">
+            <div className="contenedor opacity-80">
 
                 <div className="bg-white  flex flex-col pr-10 pl-10 sombra h-full">
                     <form onSubmit={submitForm} ref={form} onChange={updateFormData} action="" >

@@ -41,7 +41,7 @@ const VerUsuarios = () => {
 
 
     return (
-        <div className="contenedor ">
+        <div className="contenedor opacity-80 overflow-auto ">
             <div className="bg-white  flex flex-col pr-10 pl-10 sombra h-full">
                 <PrivateRoute roleList={"ADMINISTRADOR"}>
                     <div>
