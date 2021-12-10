@@ -22,23 +22,23 @@ const VerProyectos = () => {
     return (
         <div>
 
-            <div className="contenedor ">
-                <div className="bg-white  flex flex-col pr-10 pl-10 sombra h-full">
+            <div className="contenedor opacity-80">
+                <div className="bg-white  flex flex-row pr-10 pl-10 sombra h-full ">
 
                     <PrivateRoute roleList={"ADMINISTRADOR"}>
                         <div>
-                            <div className="contenedor flex flex-col">
+                            <div className="contenedor flex flex-col ">
                                 <h1 className="text-4xl mb-20">Listado De Proyectos :</h1>
                                 <form action="">
                                     <table >
                                         <tr>
                                             <th className="fondoCampo">Nombre</th>
-                                            <th className="fondoCampo">Presupueso</th>
+                                            <th className="fondoCampo">Presup.</th>
                                             <th className="fondoCampo">Fecha Inicio</th>
                                             <th className="fondoCampo">Fecha Fin</th>
                                             <th className="fondoCampo">Estado</th>
                                             <th className="fondoCampo">Lider</th>
-                                            <th className="fondoCampo">Objetivos</th>
+                                            <th className="fondoCampo">Objetivo</th>
                                             <th className="fondoCampo">Inscripciones</th>
                                             <th className="fondoCampo">Avances</th>
                                             <th className="fondoCampo">Editar</th>
@@ -51,8 +51,12 @@ const VerProyectos = () => {
                                                 <td>{u.fechaInicio}</td>
                                                 <td>{u.fechaFin}</td>
                                                 <td>{u.estado}</td>
-                                                <td>{u.lider.nombre}</td>
-                                                <td>{u.objetivos[0].descripcion}</td>
+                                                <td>{u.lider.nombre}</td> 
+                                                <td>{u.objetivos[0].descripcion}<hr></hr>
+                                                    {u.objetivos[1].descripcion}<hr></hr>
+                                                    {u.objetivos[2].descripcion}
+                                                    </td>
+       
                                                
                                               
                                                 <td>
@@ -66,20 +70,15 @@ const VerProyectos = () => {
                                                     </Link>
                                                 </td>
 
-                                                <td className="flex flex-row gap-5">
+                                                <td className="flex flex-col gap-5">
                                                 <Link to={`/editarEstadoProyecto/${u._id}`}>
                                                         <input className="campo   boton cursor-pointer mb-10" type="button" value="Estado" />
                                                     </Link>
 
                                                     <Link to={`/editarFaseProyecto/${u._id}`}>
-                                                        <input className="campo   boton cursor-pointer mb-10" type="button" value="Fase" />
+                                                        <input className="campo   boton cursor-pointer mb-10 justify-items-center" type="button" value="Fase" />
                                                     </Link>
                                                 </td>
-
-                                       
-                                       
-                            
-            
                                             </tr>
                                         );
 
