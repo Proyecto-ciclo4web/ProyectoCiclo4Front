@@ -1,10 +1,14 @@
 import PrivateRoute from 'context/PrivateRoute'
 import React, {useEffect, useState} from 'react'
 import { getUsuarios } from 'graphql/usuario/querys';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import DropDown from 'components/Dropdown';
 import useFormData from 'hooks/useFormData';
 import { Enum_TipoObjetivo } from 'utils/enums';
+import { nanoid } from 'nanoid';
+import { ObjetoContext } from 'context/ObjetoContext';
+import { useObjeto } from 'context/ObjetoContext';
+import { crearProyecto} from 'graphql/proyecto/mutations';
 
 
 const NvoProyecto = () => {
@@ -15,6 +19,8 @@ const NvoProyecto = () => {
             filtro: {rol:'LIDER', estado:'AUTORIZADO'}
         }
     });
+
+    const [CrearUnProyecto, {data:mutationData, loading:mutationLoading, error:mutationError }]=useMutation(crearProyecto);
 
     useEffect(()=>{
         console.log(data)
@@ -27,9 +33,20 @@ const NvoProyecto = () => {
             setListaUsuarios(lu);
         }
     }, [data]);
+
+    useEffect(()=>{
+        console.log('cont de mutation data', mutationData)
+    })
+
     const submitForm= (e)=>{
         e.preventDefault();
-        console.log(formData);
+       
+        formData.objetivos =Object.values(formData.objetivos);
+        formData.presupuesto=parseFloat(formData.presupuesto) 
+        
+        CrearUnProyecto({
+            variables: formData,
+        })
     }
     if (loading) return <div>loading</div>
 
@@ -66,9 +83,7 @@ const NvoProyecto = () => {
 
                 <Objetivos/>
 
-                <input type="submit" className=" w-full boton campo mb-5 campo hover:bg-green-600 cursor-pointer" value="Crear Proyecto" />
-
-                            
+                <input type="submit" className=" w-80 boton campo mb-5 campo hover:bg-green-600 cursor-pointer" value="Crear Proyecto" />                 
                 
             </form>
             </div>
@@ -80,33 +95,67 @@ const NvoProyecto = () => {
 
 const Objetivos=()=>{
     const [listaObjetivos, setListaObjetivos]=useState([]);
+    
     const compObjetivoAgregado=()=>{
-        return <FormObjetivo/>;   
+        const id= nanoid();
+        return <FormObjetivo key={id} id={id}/>; 
     }
-    return( <div>
+    const eliminarObjetivo = (id) => {
+        setListaObjetivos(listaObjetivos.filter((elem) => elem.props.id !== id));
+    };
+    return( 
+    <ObjetoContext.Provider value={{eliminarObjetivo}}>
+    <div>
         <div className='flex justify-between mx-2 mb-1' >
-        <div>Agregar Objetivo</div>
+            <div>Agregar Objetivo</div>
             <div> <i onClick={() => setListaObjetivos([...listaObjetivos, compObjetivoAgregado()])}
-            className='fas fa-plus p-2 mx-2 cursor-pointer bg-green-500 hover:bg-green-600 ' /> </div> </div>
+            className='fas fa-plus p-2 mx-2 cursor-pointer bg-green-500 hover:bg-green-600 ' /> </div> 
+        </div>
         {listaObjetivos.map(objetivo=>{
         return objetivo;
     })}
-    </div>)
+    </div>
+    </ObjetoContext.Provider>
+    );
 };
 
-const FormObjetivo =({id})=>{
+
+
+const FormObjetivo =({id})=>{ 
+    const {eliminarObjetivo}=useObjeto();
    return(
        <div>     
            <div><label htmlFor="">Tipo de Objetivo : </label></div>
-           <DropDown name='tipoObjetivo' required={true} options={Enum_TipoObjetivo} />
-           <div><label htmlFor="">Descripcion de objetivo </label></div>
-           <input className="w-80 campo mb-5 mr-4" name='descripcion' label='Descripcion' type='text' requires='true' />
+           <DropDown name={`nested||objetivos||${id}||tipo`} required={true} options={Enum_TipoObjetivo} />
+
+           <div><label htmlFor="descripcion">Descripcion de objetivo </label></div>
+           
+           <textarea name={`nested ||objetivos||${id}||descripcion`} type='text' required='true' rows="2" cols="30" id="descripcion" className="w-80 campo mb-1 mr-1 p-0">
+           </textarea>
+           
+ 
+
+
            <div className='flex justify-between mx-2' >
            <div>Eliminar Objetivo</div>
-           <div>    <i      
+           <div> <i onClick={()=>eliminarObjetivo(id)}   
                className='fas fa-minus p-2 mx-2 mb-2 cursor-pointer bg-red-600 hover:bg-red-900' /> </div>
            </div>
        </div>
-   ) 
-}
+   )
+};
+
+
 export default NvoProyecto;
+
+
+
+
+
+
+
+
+
+
+
+
