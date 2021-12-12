@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar {
+  @apply w-64 bg-gray-200 shadow flex-col justify-between;
+}
+
+.sidebar-route {
+  @apply rounded-md flex w-full justify-between cursor-pointer items-center m-3 p-3;
+}
+
+
+
+html{
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td{
+  padding: 10px;
+}
+
+.tabla th {
+  background-color: rgb(231, 231, 231);
+}
+
+.fondoCampo{
+
+  background-color: rgb(14, 168, 0);
+  
+}
+
+
+
+.tabla tr:hover{
+  background-color: rgb(238, 237, 237);
+  cursor: pointer;
+
+}
+.tabla{
+  width: 100%;
+}
+
+
+.contenedor{
+  background-color: #F8F7F7;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.centrarFormulario{
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100% !important; 
+ 
+}
+
+.campo{
+
+  border: 2px solid #000;
+  padding: 10px;
+
+}
+
+
+.fondo{
+  background-image: url(fondo5.jpeg);
+
+}
+
+
+.sombra{
+  box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75);
+
+}
+
+.boton{
+  font-weight: 700;
+}
+
+.boton:hover{
+  background-color: rgb(14, 168, 0);
+}
+
+
+
+
+
+
