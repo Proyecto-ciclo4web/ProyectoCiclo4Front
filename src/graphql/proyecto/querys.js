@@ -97,7 +97,6 @@ query Proyecto($id: String!) {
 `;
 
 
-
 const verObjetivos = gql`
 query Proyecto($id: String!) {
   Proyecto(_id: $id) {
@@ -206,9 +205,41 @@ mutation AgregarObservacion($id: String!, $observacion: String!) {
 }
 `;
 
+const inscripcionesEstudiante = gql`
+query InscripcionEstudiante($estudiante: String!) {
+  InscripcionEstudiante(estudiante: $estudiante) {
+
+    proyecto {
+    _id
+      nombre
+      presupuesto
+      fechaInicio
+      fechaFin
+      estado
+      objetivos {
+        descripcion
+        tipo
+      }
+      avances {
+        fecha
+        descripcion
+        observacion
+        proyecto {
+          nombre
+        }
+        creadoPor {
+          nombre
+        }
+      }
+    }
+  }
+}
+`
 
 
 
 
-export { buscarProyectos,observacion1 , agregarObservacion1, verInscripciones, verAvances, Proyecto, verObjetivos, proyectosLiderados, Proyecto1 ,Inscripcion1,aprobarInscripcion}
+
+
+export { buscarProyectos,observacion1 , agregarObservacion1, verInscripciones, verAvances, Proyecto, verObjetivos, proyectosLiderados, Proyecto1 ,Inscripcion1,aprobarInscripcion, inscripcionesEstudiante}
 

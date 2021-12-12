@@ -5,10 +5,6 @@ import { buscarProyectos } from 'graphql/proyecto/querys'
 import PrivateLayout from 'layouts/PrivateLayout'
 import React from 'react'
 
-
-
-
-
 const VerProyectosEstu = () => {
 
     const { data, loading, error } = useQuery(buscarProyectos);
@@ -19,8 +15,8 @@ const VerProyectosEstu = () => {
         <div>
           <div>
 
-<div className="contenedor ">
-    <div className="bg-white  flex flex-col pr-10 pl-10 sombra h-full">
+        <div className="contenedor ">
+            <div className="bg-white  flex flex-col pr-10 pl-10 sombra h-full">
 
 
             <div>
@@ -36,8 +32,8 @@ const VerProyectosEstu = () => {
                                 <th className="fondoCampo">Estado</th>
                                 <th className="fondoCampo">Lider</th>
                                 <th className="fondoCampo">Objetivos</th>
-                                <th className="fondoCampo">Inscripciones</th>
                                 <th className="fondoCampo">Avances</th>
+                                <th className="fondoCampo">Inscripción</th>
 
                             </tr>
                             {data && data.Proyectos.map((u) => {
@@ -59,16 +55,14 @@ const VerProyectosEstu = () => {
                                                 <input className="campo   boton cursor-pointer mb-10" type="button" value="Objetivos" />
                                             </Link>
                                         </td>
-
-
-                                        <td>
-                                            <Link to={`/verInscripciones/${u._id}`}>
-                                                <input className="campo   boton cursor-pointer mb-10" type="button" value="Inscripciones" />
-                                            </Link>
-                                        </td>
                                         <td>
                                             <Link to={`/verAvances/${u._id}`}>
                                                 <input className="campo   boton cursor-pointer mb-10" type="button" value="Avances" />
+                                            </Link>
+                                        </td>
+                                        <td>
+                                            <Link to={`/Inscripcion/${u._id}`}>
+                                                <input className="campo   boton cursor-pointer mb-10" type="button" value="Inscribirme" />
                                             </Link>
                                         </td>
 

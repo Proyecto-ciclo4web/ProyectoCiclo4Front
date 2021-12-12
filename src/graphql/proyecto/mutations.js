@@ -34,6 +34,23 @@ mutation Mutation($nombre: String!, $presupuesto: Float!, $lider: String!, $fech
 }
 `;
 
+const crearInscripcion = gql`
+
+mutation Mutacion($estado: Enum_EstadoInscripcion!, $proyecto: String!, $estudiante: String!) {
+  crearInscripcion(estado: $estado, proyecto: $proyecto, estudiante: $estudiante) {
+    _id
+  }
+    
+}
+
+`
+const crearAvance = gql`
+mutation CrearAvance($fecha: Date!, $descripcion: String!, $proyecto: String!, $creadoPor: String!) {
+  crearAvance(fecha: $fecha, descripcion: $descripcion, proyecto: $proyecto, creadoPor: $creadoPor) {
+    _id
+  }
+}
+`
 
 
 
@@ -41,4 +58,5 @@ mutation Mutation($nombre: String!, $presupuesto: Float!, $lider: String!, $fech
 
 
 
-export { cambiarEstadoProyecto ,cambiarFaseProyecto ,crearProyecto1}
+
+export { cambiarEstadoProyecto ,cambiarFaseProyecto ,crearProyecto1, crearInscripcion, crearAvance}

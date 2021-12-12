@@ -37,6 +37,9 @@ import Editar1 from 'pages/proyecto/editar1';
 import ActualizarInscripcion from 'pages/proyecto/actualizarInscripcion';
 import AgregarObservacion from 'pages/proyecto/agregarObservacion'
 import VerProyectosEstu from 'pages/proyecto/verProyectosEstu';
+import InscripcionEstudiante from 'pages/proyecto/inscripcionEstudiante'
+import ProyectosEstudiante from 'pages/proyectosEstudiante';
+import CrearAvance from 'pages/proyecto/crearAvance';
 
 
 
@@ -152,10 +155,15 @@ function App() {
                 <Route path='/AgregarObservacion/:_id' element={<AgregarObservacion />} />
 
                 <Route path='/VerProyectosEstu' element={<VerProyectosEstu />} />
-                
-                
-                
-                
+
+                <Route path ='/Inscripcion/:_id' element={<InscripcionEstudiante/>} />
+
+                <Route path ='/MisProyectos' element={<ProyectosEstudiante/>} />
+
+                <Route path = '/crearAvance/:_id' element={<CrearAvance/>} />
+
+
+                        
 
               </Route>
 

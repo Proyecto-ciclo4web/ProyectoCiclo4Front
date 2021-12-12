@@ -43,29 +43,20 @@ if(loading){
 
                                                  <td >{u.tipo}</td>
                                                 <td>{u.descripcion}</td> 
-                                        
 
                                             </tr>
                                         );
                                     })
                                     }
-
                                 </table>
                             </form>
 
                             <div>
 
                             </div>
-
                         </div>
                     </div>
-
-
-
             </div>
-
-
-
         </div>
     )
 }
