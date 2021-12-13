@@ -40,6 +40,7 @@ import VerProyectosEstu from 'pages/proyecto/verProyectosEstu';
 import InscripcionEstudiante from 'pages/proyecto/inscripcionEstudiante'
 import ProyectosEstudiante from 'pages/proyectosEstudiante';
 import CrearAvance from 'pages/proyecto/crearAvance';
+import EditarAvances from 'pages/proyecto/editarAvance';
 
 
 
@@ -161,6 +162,8 @@ function App() {
                 <Route path ='/MisProyectos' element={<ProyectosEstudiante/>} />
 
                 <Route path = '/crearAvance/:_id' element={<CrearAvance/>} />
+
+                <Route path = '/editarAvance/:_id' element={<EditarAvances/>} />
 
 
                         

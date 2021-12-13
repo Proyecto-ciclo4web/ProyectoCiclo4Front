@@ -238,8 +238,5 @@ query InscripcionEstudiante($estudiante: String!) {
 
 
 
-
-
-
 export { buscarProyectos,observacion1 , agregarObservacion1, verInscripciones, verAvances, Proyecto, verObjetivos, proyectosLiderados, Proyecto1 ,Inscripcion1,aprobarInscripcion, inscripcionesEstudiante}
 

@@ -4,6 +4,7 @@ import { verAvances } from 'graphql/proyecto/querys';
 import React from 'react'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import PrivateComponent from 'context/PrivateComponent';
 
 
 
@@ -32,8 +33,6 @@ const VerAvances = () => {
 
                     <div className="contenedor ">
                         <div className="bg-white  flex flex-col pr-10 pl-10 sombra h-full">
-
-                   
                                 <div>
                                     <div className="contenedor flex flex-col">
                                         <h1 className="text-4xl mb-20">Listado De Avances  :</h1>
@@ -57,14 +56,22 @@ const VerAvances = () => {
                                                             <td>{u.fecha}</td>
                                                             <td>{u.proyecto.nombre}</td>
                                                             <td>{u.observacion}</td>
+                                                            <PrivateComponent roleList={"ADMINISTRADOR", "LIDER"}>
 
                                                             <td>
                                                                 <Link to={`/AgregarObservacion/${u._id}`}>
                                                                     <input className="campo   boton cursor-pointer mb-10" type="button" value="Agregar Observacion" />
                                                                 </Link>
-
-
                                                             </td>
+                                                            </PrivateComponent>
+
+                                                            <PrivateComponent roleList={"ESTUDIANTE"}>
+                                                            <td>
+                                                                <Link to={`/editarAvance/${u._id}`}>
+                                                                    <input className="campo   boton cursor-pointer mb-10" type="button" value="Editar Avance" />
+                                                                </Link>
+                                                            </td>
+                                                            </PrivateComponent>
 
                                                             {/* <td>{u.proyecto.nombre}</td>
                                                             <td>{u.estado}</td>
