@@ -114,7 +114,8 @@ function App() {
             <Routes>
               <Route path='/' element={<PrivateLayout />}>
                 
-                <Route path='' element={<Index />} />
+
+
 
                 <Route path='/perfil' element={<MiPerfil />} />
 
@@ -169,8 +170,8 @@ function App() {
                         
 
               </Route>
-
-
+              
+              <Route path='' element={<Login />} />
               <Route path='/registro' element={<Registro />} />
               <Route path='/login' element={<Login />} />
 
