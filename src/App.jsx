@@ -3,7 +3,7 @@ import PrivateLayout from 'layouts/PrivateLayout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { UserContext } from 'context/userContext';
-import Index from 'pages/Index';
+import Index from './pages/Index';
 import { setContext } from '@apollo/client/link/context';
 import 'styles/globals.css';
 import jwt_decode from "jwt-decode";
