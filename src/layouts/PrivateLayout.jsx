@@ -59,7 +59,11 @@ const PrivateLayout = () => {
 
       <PrivateEstado estadoList={"PENDIENTE"}>
 
-        <div>HACER PANTALLA DE PENDIENTE</div>
+        <div>SE ENCUENTRA PENDIENTE POR AUTORIZAR ..... </div>
+
+<Link to='/login'>
+<div className="campo   boton cursor-pointer mb-10" >Volver Al Login</div>
+</Link>
       </PrivateEstado>
 
 
