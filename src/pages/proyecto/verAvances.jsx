@@ -56,7 +56,16 @@ const VerAvances = () => {
                                                             <td>{u.fecha}</td>
                                                             <td>{u.proyecto.nombre}</td>
                                                             <td>{u.observacion}</td>
-                                                            <PrivateComponent roleList={"ADMINISTRADOR", "LIDER"}>
+                                                            <PrivateComponent roleList={"ADMINISTRADOR"}>
+
+                                                            <td>
+                                                                <Link to={`/AgregarObservacion/${u._id}`}>
+                                                                    <input className="campo   boton cursor-pointer mb-10" type="button" value="Agregar Observacion" />
+                                                                </Link>
+                                                            </td>
+                                                            </PrivateComponent>
+
+                                                            <PrivateComponent roleList={"LIDER"}>
 
                                                             <td>
                                                                 <Link to={`/AgregarObservacion/${u._id}`}>
