@@ -32,6 +32,7 @@ const SidebarLinks = () => {
 
 
       <PrivateComponent roleList={"ESTUDIANTE"}>
+         <div className=" text-center bg-gray-400 rounded-md  campo mb-10">ESTUDIANTE</div>
 
         <SidebarRoute to='/perfil' title='Mi Perfil' icon='fas fa-user' />
 
