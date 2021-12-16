@@ -13,7 +13,6 @@ const DropDown = ({  name, defaultValue = '', required, options }) => {
       <select
         required={required}
         name={name}
-        className='input'
         value={selectedValue}
         onChange={(e) => setSelectedValue(e.target.value)}
         className="w-80 campo mb-10"

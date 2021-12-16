@@ -39,7 +39,7 @@ const PrivateLayout = () => {
 
   useEffect(() => {
     console.log("TOKEN ACTUAL", auToken, loading)
-  }, [auToken])
+  }, [auToken,loading])
 
 
   return (

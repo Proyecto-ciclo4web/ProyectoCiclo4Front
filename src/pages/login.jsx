@@ -27,7 +27,7 @@ const Login = () => {
               navigate("/");
           }
         }
-      },[data])
+      },[data,navigate,setToken])
 
     return (
         <div className="contenedor "> 

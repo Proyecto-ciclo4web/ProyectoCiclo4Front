@@ -29,7 +29,7 @@ const Registro = () => {
             navigate("/");
         }
       }
-    },[data])
+    },[data,navigate,setToken])
     return (
         <div className="">
             <div className="contenedor ">
