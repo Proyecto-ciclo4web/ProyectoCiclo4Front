@@ -12,11 +12,11 @@ const AgregarObservacion = () => {
     const { form, formData, updateFormData } = useFormData(null);
     const { _id } = useParams();
 
-    const { data, loading, error } = useQuery(agregarObservacion1, {
+    const { data, loading } = useQuery(agregarObservacion1, {
         variables: { id: _id }
     })
 
-    const [a, { data1, loading1, error1 }] = useMutation(observacion1)
+    const [a] = useMutation(observacion1)
 
 
 

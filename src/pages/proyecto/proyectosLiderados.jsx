@@ -11,14 +11,14 @@ import PrivateRoute from 'context/PrivateRoute';
 
 const ProyectosLiderados = () => {
 
-    const { userData, setUserData } = useUser();
+    const { userData } = useUser();
 
-    const [idEdit, setIdEdit] = useState(userData._id);
+    const [idEdit] = useState(userData._id);
 
     console.log("el id del lider es  ", idEdit)
 
 
-    const { data, loading, error } = useQuery(proyectosLiderados, {
+    const { data} = useQuery(proyectosLiderados, {
         variables: { lider: idEdit }
 
     });

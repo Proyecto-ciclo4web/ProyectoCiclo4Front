@@ -1,6 +1,5 @@
 import { useMutation } from '@apollo/client';
 import { useAuth } from 'context/autentificacion';
-import { UserContext } from 'context/userContext';
 import { useUser } from 'context/userContext';
 import { EditarUsuario } from 'graphql/usuario/mutations';
 import useFormData from 'hooks/useFormData';
@@ -17,16 +16,16 @@ const MiPerfil = () => {
 
     const navigate = useNavigate();
 
-    const { userData, setUserData } = useUser();
+    const { userData } = useUser();
 
     const { form, formData, updateFormData } = useFormData(null);
 
-    const [idEdit, setIdEdit] = useState(userData._id);
+    const [idEdit] = useState(userData._id);
 
     const { setToken } = useAuth();
 
 
-    const [editarUsuario, { data, loading, error }] = useMutation(EditarUsuario, {
+    const [editarUsuario] = useMutation(EditarUsuario, {
 
         variables: { _id: idEdit },
     });

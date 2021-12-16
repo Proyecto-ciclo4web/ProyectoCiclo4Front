@@ -14,7 +14,7 @@ const EditarObjetivos = () => {
 
 
 
-    const { data, loading, error } = useQuery(verObjetivos, {
+    const { data, loading } = useQuery(verObjetivos, {
         variables: { id: _id }
     });
 

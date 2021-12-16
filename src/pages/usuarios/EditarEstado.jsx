@@ -4,7 +4,7 @@ import { CambiarEstado } from 'graphql/usuario/mutations';
 import { BuscarUsuario } from 'graphql/usuario/querys';
 import useFormData from 'hooks/useFormData';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 
 import { Enum_EstadoUsuario } from 'utils/enums';
@@ -25,12 +25,12 @@ const EditarEstado = () => {
     console.log(_id);
 
 
-    const { data, loading, error } = useQuery(BuscarUsuario, {
+    const { data, loading } = useQuery(BuscarUsuario, {
         variables: { _id },
     });
 
 
-    const [cambiarEstado, { data1, loading1, error1 }] = useMutation(CambiarEstado, {
+    const [cambiarEstado] = useMutation(CambiarEstado, {
         variables: { _id },
     })
 
@@ -38,7 +38,7 @@ const EditarEstado = () => {
     const { form, formData, updateFormData } = useFormData(null);
 
 
-    const [estado, setEstado] = useState('');
+
 
 
     useEffect(() => { console.log("los datos son de cada uno : ", data) }, [data])

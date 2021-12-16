@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import PrivateRoute from 'context/PrivateRoute';
+
 import { verObjetivos } from 'graphql/proyecto/querys';
 import React from 'react'
 import { useParams } from 'react-router';
@@ -12,7 +12,7 @@ const VerObjetivos = () => {
 
 
 
-    const { data, loading, error } = useQuery(verObjetivos, {
+    const { data, loading } = useQuery(verObjetivos, {
         variables: { id: _id }
     });
 

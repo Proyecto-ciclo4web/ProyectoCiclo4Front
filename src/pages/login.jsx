@@ -13,7 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
     const {setToken} = useAuth();
     const { form, formData, updateFormData } = useFormData(null);
-    const [login,{data,error,loading}]= useMutation(Login1);
+    const [login,{data}]= useMutation(Login1);
     const subtmitForm = (e) =>{
         e.preventDefault();
         login({variables:formData});

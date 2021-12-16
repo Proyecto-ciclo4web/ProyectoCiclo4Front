@@ -5,16 +5,16 @@ import { Registrar } from "graphql/autentificacion/mutations";
 import useFormData from "hooks/useFormData";
 import { useEffect } from "react";
 import { Enum_Rol } from "utils/enums";
-import { Link } from "react-router-dom";
+
 import { useNavigate } from "react-router";
-import { AuContext } from "context/autentificacion";
+
 import { useAuth } from "context/autentificacion";
 
 const Registro = () => {
     const {setToken} = useAuth();
     const navigate = useNavigate();
     const { form, formData, updateFormData } = useFormData(null);
-    const [registrar,{data,error,loading}]=useMutation(Registrar);
+    const [registrar,{data}]=useMutation(Registrar);
     const submitForm = (e) => {
         e.preventDefault();
         console.log("los datos son ", formData)

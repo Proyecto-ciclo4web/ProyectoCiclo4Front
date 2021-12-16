@@ -1,16 +1,12 @@
 import { useMutation, useQuery } from '@apollo/client';
-import { useAuth } from 'context/autentificacion';
+
 import PrivateRoute from 'context/PrivateRoute';
-import { UserContext } from 'context/userContext';
-import { useUser } from 'context/userContext';
+
 import { aprobarInscripcion } from 'graphql/proyecto/querys';
 import { Inscripcion1 } from 'graphql/proyecto/querys';
-import { EditarUsuario } from 'graphql/usuario/mutations';
-import { BuscarUsuario } from 'graphql/usuario/querys';
-import { getUsuarios } from 'graphql/usuario/querys';
-import useFormData from 'hooks/useFormData';
-import React, { useState } from 'react'
-import { useNavigate, useParams } from 'react-router';
+
+
+import {  useParams } from 'react-router';
 
 
 
@@ -24,7 +20,7 @@ const ActualizarInscripcion = () => {
 
 
 
-    const { data, loading, error } = useQuery(Inscripcion1, {
+    const { data, loading } = useQuery(Inscripcion1, {
         variables: { id: _id }
     })
 
@@ -34,7 +30,7 @@ const ActualizarInscripcion = () => {
 
 
 
-    const [modificar, { data1, loading1, error1 }] = useMutation(aprobarInscripcion);
+    const [modificar] = useMutation(aprobarInscripcion);
 
 
 

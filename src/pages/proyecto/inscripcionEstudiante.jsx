@@ -5,11 +5,11 @@ import { crearInscripcion } from 'graphql/proyecto/mutations';
 import { useMutation } from '@apollo/client';
 
 const InscripcionEstudiante = () => {
-    const { userData, setUserData } = useUser();
+    const { userData } = useUser();
     const { _id } = useParams();
     console.log(userData)
 
-    const [crear, {data, loading, error}] = useMutation(crearInscripcion)
+    const [crear] = useMutation(crearInscripcion)
 
     const presionarBoton = (e) =>{
         console.log ('Si funciona')

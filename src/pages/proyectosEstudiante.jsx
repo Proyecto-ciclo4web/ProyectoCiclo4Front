@@ -1,19 +1,19 @@
 import React from 'react'
 import { inscripcionesEstudiante } from 'graphql/proyecto/querys'
 import { useQuery } from '@apollo/client'
-import { useParams } from 'react-router'
+
 import { useUser } from 'context/userContext'
 import { Link } from 'react-router-dom'
 
 
 const ProyectosEstudiante = () => {
-    const { userData, setUserData } = useUser();
-    const{data, loading, error} = useQuery(inscripcionesEstudiante, {
+    const { userData } = useUser();
+    const{data} = useQuery(inscripcionesEstudiante, {
         variables: {
             estudiante: userData._id
         }
     });
-    const { _id } = useParams();
+
     console.log(data)
 
     return (

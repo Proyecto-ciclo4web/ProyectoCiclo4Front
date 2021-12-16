@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from 'context/autentificacion';
 import { useMutation } from '@apollo/client';
 import { REFRESH_TOKEN } from 'graphql/autentificacion/mutations';
-import PrivateComponent from 'context/PrivateRoute';
-import PrivateRoute from 'context/PrivateRoute';
+
 import PrivateEstado from 'context/privateEstado';
 
 
@@ -14,9 +13,9 @@ import PrivateEstado from 'context/privateEstado';
 const PrivateLayout = () => {
 
   const navigate = useNavigate();
-  const { auToken, setAuToken, setToken } = useAuth();
+  const { auToken,  setToken } = useAuth();
   const [loadingauth, setloadingauth] = useState(true);
-  const [refrescarToken, { data, loading, error }] = useMutation(REFRESH_TOKEN);
+  const [refrescarToken, { data, loading }] = useMutation(REFRESH_TOKEN);
 
   useEffect(() => {
     refrescarToken();

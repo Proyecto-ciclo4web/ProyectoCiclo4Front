@@ -18,14 +18,14 @@ const EditarFaseProyecto = () => {
 
     const { _id } = useParams();
 
-    const { data, loading, error } = useQuery(Proyecto, {
+    const { data, loading } = useQuery(Proyecto, {
         variables: { id:  _id }
 
     })
     const { form, formData, updateFormData } = useFormData(null);
 
 
-    const [cambiarFase, { data1, loading1, error1 }] = useMutation(cambiarFaseProyecto, {
+    const [cambiarFase] = useMutation(cambiarFaseProyecto, {
         variables: { cambiarFaseProyectoId: _id }
     })
 

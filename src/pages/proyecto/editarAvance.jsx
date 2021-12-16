@@ -11,7 +11,7 @@ const EditarAvances = () => {
     const { _id } = useParams();
     const { form, formData, updateFormData } = useFormData(null);
 
-    const [EditarAvance,{data:mutationData, loading:mutationLoading, error:mutationError}]=useMutation(editarAvance,{
+    const [EditarAvance,{data:mutationData, error:mutationError}]=useMutation(editarAvance,{
         variables:{id: _id}
     })
 

@@ -1,10 +1,10 @@
 import { useQuery } from '@apollo/client';
-import { useUser } from 'context/userContext';
+
 import { Proyecto1 } from 'graphql/proyecto/querys';
-import { proyectosLiderados } from 'graphql/proyecto/querys';
+
 import useFormData from 'hooks/useFormData';
 import React from 'react'
-import { useState } from 'react';
+
 import { useParams } from 'react-router';
 
 
@@ -16,10 +16,11 @@ const EditarProyecto = () => {
 
     const { _id } = useParams();
     
-    const { form, formData, updateFormData } = useFormData(null);
+    const { form, formData, updateFormData } = useFormData(null)
+    console.log(formData)
 
 
-    const { data, loading, error } = useQuery(Proyecto1, {
+    const { data, loading } = useQuery(Proyecto1, {
         variables: { id: _id }
 
     });

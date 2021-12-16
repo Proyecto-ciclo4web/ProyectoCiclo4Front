@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom';
 import PrivateRoute from 'context/PrivateRoute'
 import { buscarProyectos } from 'graphql/proyecto/querys'
-import PrivateLayout from 'layouts/PrivateLayout'
+
 import React from 'react'
 
 
@@ -13,7 +13,7 @@ const VerProyectos = () => {
 
 
 
-    const { data, loading, error } = useQuery(buscarProyectos);
+    const { data } = useQuery(buscarProyectos);
 
 
     console.log("los datos son", data)

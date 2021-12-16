@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from 'components/input'
+
 import ButtonLoading from 'components/ButtonLoading'
 import { crearAvance } from 'graphql/proyecto/mutations'
 import { useUser } from 'context/userContext'
@@ -9,8 +9,8 @@ import { useParams } from 'react-router-dom'
 
 const CrearAvance = () => {
     const { form, formData, updateFormData } = useFormData();
-    const { userData, setUserData } = useUser();
-    const [crearAvances, { data, loading , error}] =
+    const { userData } = useUser();
+    const [crearAvances, { data}] =
     useMutation(crearAvance);
     const { _id } = useParams();
 
