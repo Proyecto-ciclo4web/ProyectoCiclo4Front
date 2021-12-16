@@ -2,13 +2,7 @@ import { useQuery } from '@apollo/client'
 import { getUsuarios } from 'graphql/usuario/querys'
 import { useEffect } from 'react';
 import PrivateRoute from 'context/PrivateRoute';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
 import * as React from 'react';
-import { Enum_EstadoUsuario } from 'utils/enums';
-import DropDown from 'components/Dropdown';
 import { Link } from 'react-router-dom';
 
 
@@ -17,26 +11,15 @@ import { Link } from 'react-router-dom';
 
 
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
+
 
 const VerUsuarios = () => {
     const { data, loading, error } = useQuery(getUsuarios);
     useEffect(() => { console.log("los datos son ", data) }, [data])
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
 
+    console.log("el errores ",error,loading)
 
+ 
 
 
 

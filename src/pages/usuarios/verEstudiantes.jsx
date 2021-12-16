@@ -12,7 +12,7 @@ const VerEstudiantes = () => {
 
     const { data, loading, error } = useQuery(Estudiantes)
 
-    console.log("los estudiantes son , : ", data)
+    console.log("los estudiantes son , : ", data,loading,error)
 
     return (
         <div className="contenedor ">

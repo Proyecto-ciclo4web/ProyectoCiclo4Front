@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PrivateLayout from 'layouts/PrivateLayout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Auth0Provider } from '@auth0/auth0-react';
 import { UserContext } from 'context/userContext';
-import Index from 'pages/Index';
 import { setContext } from '@apollo/client/link/context';
 import 'styles/globals.css';
 import jwt_decode from "jwt-decode";
@@ -11,15 +9,14 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  useQuery,
-  gql,
+  
+
   createHttpLink
 } from "@apollo/client";
 import VerUsuarios from 'pages/usuarios/verUsuarios';
 import Registro from 'pages/registro';
 import { Login } from 'pages/login';
 import { AuContext } from 'context/autentificacion';
-import PrivateComponent from 'context/PrivateRoute';
 import MiPerfil from 'pages/miPerfil';
 import EditarEstado from 'pages/usuarios/EditarEstado';
 import VerProyectos from 'pages/proyecto/verProyectos';

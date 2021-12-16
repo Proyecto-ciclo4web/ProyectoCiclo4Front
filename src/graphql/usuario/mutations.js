@@ -26,21 +26,7 @@ estado
 
 
 
-const BuscarUsuario = gql `
 
-query Usuario($id: String!) {
-  Usuario(_id: $id) {
-    _id
-    nombre
-    apellido
-    identificacion
-    correo
-    rol
-    estado
-  }
-}
-
-`;
 
 
 const CambiarEstado = gql`

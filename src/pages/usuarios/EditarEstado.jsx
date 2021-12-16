@@ -3,13 +3,12 @@ import DropDown from 'components/Dropdown';
 import { CambiarEstado } from 'graphql/usuario/mutations';
 import { BuscarUsuario } from 'graphql/usuario/querys';
 import useFormData from 'hooks/useFormData';
-import { nanoid } from 'nanoid';
+
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { useSearchParams } from 'react-router-dom';
+
 import { Enum_EstadoUsuario } from 'utils/enums';
-import { Enum_Rol } from 'utils/enums';
-import PrivateRoute from 'context/PrivateRoute';
+
 
 
 
