@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from 'context/autentificacion';
 import { useMutation } from '@apollo/client';
 import { REFRESH_TOKEN } from 'graphql/autentificacion/mutations';
-
+import { Link } from 'react-router-dom';
 import PrivateEstado from 'context/privateEstado';
 
 
