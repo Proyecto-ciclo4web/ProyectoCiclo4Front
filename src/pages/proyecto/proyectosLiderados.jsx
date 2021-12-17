@@ -90,10 +90,7 @@ const ProyectosLiderados = () => {
                                                         </Link>
 
                                                         
-                                                        <Link to={`/EditarObjetivos/${u._id}`}>
-                                                            <input className="campo   boton cursor-pointer mb-10" type="button" value="Editar Objetivos" />
-                                                        </Link>
-
+                                           
 
                                                     </td>
 
@@ -177,10 +174,7 @@ const ProyectosLiderados = () => {
                                                         </Link>
 
                                                         
-                                                        <Link to={`/EditarObjetivos/${u._id}`}>
-                                                            <input className="campo   boton cursor-pointer mb-10" type="button" value="Editar Objetivos" />
-                                                        </Link>
-
+                                                 
 
                                                     </td>
 
