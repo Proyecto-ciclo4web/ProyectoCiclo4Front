@@ -16,15 +16,15 @@ const EditarProyecto = () => {
 
     const { _id } = useParams();
     
-    const { form, formData, updateFormData } = useFormData(null)
-    console.log(formData)
+    const { form, formData, updateFormData } = useFormData(null);
 
 
-    const { data, loading } = useQuery(Proyecto1, {
+    const { data, loading, error } = useQuery(Proyecto1, {
         variables: { id: _id }
 
     });
 
+     console.log(formData,error)
 
     console.log("los datos son", data)
 

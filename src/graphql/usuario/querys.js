@@ -16,6 +16,21 @@ query Query {
 `;
 
 
+const getLider = gql`
+query Lideres {
+  Lideres {
+    _id
+    nombre
+    apellido
+    identificacion
+    correo
+    rol
+    estado
+  }
+}
+`;
+
+
 const BuscarUsuario = gql`
 
 query Usuario($_id: String!) {
@@ -54,4 +69,4 @@ query Query {
 
 
 
-export { getUsuarios , BuscarUsuario, Estudiantes}
+export { getUsuarios , BuscarUsuario, Estudiantes,getLider}

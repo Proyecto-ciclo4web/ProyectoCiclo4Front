@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import Input from 'components/input';
-import { getUsuarios } from 'graphql/usuario/querys.js';
 import { Link } from 'react-router-dom';
 import DropDown from 'components/Dropdown';
 import ButtonLoading from 'components/ButtonLoading';
@@ -11,11 +10,13 @@ import { nanoid } from 'nanoid';
 import { ObjContext } from 'context/objContext';
 import { useObj } from 'context/objContext';
 import { crearProyecto1 } from 'graphql/proyecto/mutations';
+import { getLider } from 'graphql/usuario/querys';
+
 
 const NuevoProyecto = () => {
   const { form, formData, updateFormData } = useFormData();
   const [listaUsuarios, setListaUsuarios] = useState({});
-  const { data, loading, error } = useQuery(getUsuarios, {
+  const { data, loading, error } = useQuery(getLider, {
     variables: {
       filtro: { rol: 'LIDER', estado: 'AUTORIZADO' },
     },
@@ -28,7 +29,7 @@ const NuevoProyecto = () => {
     console.log(data);
     if (data) {
       const lu = {};
-      data.Usuarios.forEach((elemento) => {
+      data.Lideres.forEach((elemento) => {
         lu[elemento._id] = elemento.correo;
       });
 
