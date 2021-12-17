@@ -60,6 +60,14 @@ mutation EditarAvance($id: String!, $descripcion: String!) {
 
 `
 
+const editarProyecto = gql `
+
+mutation Mutation($id: String!, $nombre: String!, $presupuesto: Float!) {
+  actualizarProyecto(_id: $id, nombre: $nombre, presupuesto: $presupuesto) {
+    _id
+  }
+}
+`;
 
 
 
@@ -67,5 +75,4 @@ mutation EditarAvance($id: String!, $descripcion: String!) {
 
 
 
-
-export { cambiarEstadoProyecto ,cambiarFaseProyecto ,crearProyecto1, crearInscripcion, crearAvance, editarAvance}
+export { editarProyecto,cambiarEstadoProyecto ,cambiarFaseProyecto ,crearProyecto1, crearInscripcion, crearAvance, editarAvance}
