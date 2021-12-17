@@ -38,6 +38,7 @@ const NuevoProyecto = () => {
 
   useEffect(() => {
     console.log('data mutation', mutationData);
+    
   });
 
   const submitForm = (e) => {
@@ -52,7 +53,7 @@ const NuevoProyecto = () => {
   };
 
   if (loading) return <div>...Loading</div>;
-
+    console.log(error,mutationLoading,mutationError);
   return (
     <div className='p-10 flex flex-col items-center'>
       <div className='self-start'>
